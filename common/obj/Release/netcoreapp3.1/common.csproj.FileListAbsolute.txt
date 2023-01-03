@@ -1,0 +1,10 @@
+D:\MVC Assignment\MVC Assignment\common\bin\Release\netcoreapp3.1\common.deps.json
+D:\MVC Assignment\MVC Assignment\common\bin\Release\netcoreapp3.1\common.dll
+D:\MVC Assignment\MVC Assignment\common\bin\Release\netcoreapp3.1\common.pdb
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.GeneratedMSBuildEditorConfig.editorconfig
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.AssemblyInfoInputs.cache
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.AssemblyInfo.cs
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.csproj.CoreCompileInputs.cache
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.dll
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.pdb
+D:\MVC Assignment\MVC Assignment\common\obj\Release\netcoreapp3.1\common.csproj.AssemblyReference.cache

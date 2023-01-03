@@ -1,0 +1,75 @@
+﻿@model IEnumerable<MVC_Assignment.Models.Event>
+@{
+    ViewData["Title"] = "Admin";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Events</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="https://www.nagarro.com/en/contact-us">Customer Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("CreateEvent", "Home")'">Create Event</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Logout", "Home")'">Logout</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="row Event">
+    <div class="col-sm-6 text-center" style="padding:0">
+        <h3 class="text-center">Past Event</h3>
+        <div class="PastEvent">
+
+            @foreach (var item in Model)
+            {
+                if (item.Date.CompareTo(DateTime.Now) < 0)
+                {
+                    <a asp-controller="Home" asp-action="EventDetails" asp-route-id="@item.EventId">@Html.DisplayFor(modelItem => item.Title)</a>
+                    <a href="@Url.Action("EditEventDetails","Home",new {id = item.EventId})">Edit Event</a>
+                    <br />
+                }
+            }
+        </div>
+    </div>
+    <div class="col-sm-6 text-center" style="padding:0">
+        <h3 class="text-center">Upcomming Event</h3>
+        <div class="UpcommingEvent">
+            @foreach (var item in Model)
+            {
+                if (item.Date.CompareTo(DateTime.Now) >= 0)
+                {
+                    <a asp-controller="Home" asp-action="EventDetails" asp-route-id="@item.EventId">@Html.DisplayFor(modelItem => item.Title)</a>
+                    <a href="@Url.Action("EditEventDetails","Home",new {id = @item.EventId})">Edit Event</a>
+                    <br />
+                }
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2022 Copyright: MVC_Assignment
+    </div>
+</footer>

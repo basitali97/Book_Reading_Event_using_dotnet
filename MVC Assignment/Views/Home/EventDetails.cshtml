@@ -1,0 +1,88 @@
+﻿@model common.Models.EventDTO
+@{
+    ViewData["Title"] = "EventDetails";
+    Layout = "~/Views/Home/_Layout.cshtml";
+}
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Events</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="https://www.nagarro.com/en/contact-us">Customer Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="location.href = '@Url.Action("Registration", "Home")'">Register</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Login", "Home")'">Login</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+<div class="Event">
+    <div class="row">
+        <div class="col-sm-12 ">
+            <center><h1>Event Details</h1></center>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Title</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Title)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Date</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Date)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Location</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Location)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Start Time</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.StartTime)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Duration</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Duration)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Description</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Description)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Details</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Details)</label><hr /></div>
+             </div>
+            <div class="row EventDetails">
+                <div class="col-sm-2"><label>Invite</label><hr /></div>
+                <div class="col-sm-4"><label>@Html.DisplayFor(modelItem => Model.Invite)</label><hr /></div>
+             </div>                            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<footer>
+    <div class="text-center" style="background-color: rgba(0, 0, 0, 0.05);">
+        © @DateTime.Now.Year Copyright: MVC_Assignment
+    </div>
+</footer>
